@@ -13,8 +13,11 @@ input.addEventListener("blur", (e) => {
     dataset: { length },
   } = e.target;
 
-  classList.add("valid");
-  value.length !== +length
-    ? classList.add("invalid")
-    : classList.remove("invalid");
+  if (value.length !== +length) {
+    classList.add("invalid");
+    classList.remove("valid");
+  } else {
+    classList.remove("invalid");
+    classList.add("valid");
+  }
 });
