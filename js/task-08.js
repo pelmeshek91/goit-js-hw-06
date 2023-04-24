@@ -10,9 +10,9 @@ const form = document.querySelector(".login-form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const { email, password } = event.target.elements;
-  if (email.value.length === 0 || password.value.length === 0) {
-    alert("Заповніть поля реєстрації");
+  if (email.value.length !== 0 || password.value.length !== 0) {
+    return console.log({ email: email.value, password: password.value });
   }
-  console.log({ email: email.value, password: password.value });
+  alert("Заповніть поля реєстрації");
   e.target.reset();
 });
